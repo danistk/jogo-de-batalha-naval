@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main()
+{
+
+    int tamanhoNavio = 3;
+
+    char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    // INICIANDO O TABULEIRO COM 0
+    int tabuleiro[10][10] = {0};
+    // colocando a linha fixa e modificando as colunase imprimindo o navio
+    for (int j = 0; j < 3; j++)
+    {
+
+        tabuleiro[2 + j][0] = 3;
+    }
+
+    // colocando a coluna fixa e modificando a linha e imprimindo o navio
+    for (int j = 0; j < 3; j++)
+    {
+
+        tabuleiro[4][2 + j] = 3;
+    }
+
+    printf("   "); // espaço para alnhar as letras com os numeros
+    for (int l = 0; l < 10; l++)
+    {
+
+        printf(" %c", linha[l]);
+    }
+    printf("\n");
+
+    for (int i = 0; i < 10; i++)
+    {
+
+        // imprimindo e ajustando o numero 10 que tem dois digitos
+        if (i == 9)
+            printf(" %d", i + 1);
+        else
+            printf(" %d ", i + 1);
+        // imoprimindo os valores da linha do tabuleiro em 0
+        for (int t = 0; t < 10; t++)
+        {
+            printf(" %d", tabuleiro[t][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
