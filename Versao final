@@ -78,12 +78,17 @@ int main()
         if (i == 9)
             printf(" %d", i + 1);
         else
-            printf(" %d ", i + 1);
-        // imoprimindo os valores ou simbolos que foram definidos
+            printf(" %d", i + 1);
+        
+            // laco para imprimir os simbolos na matriz
         for (int t = 0; t < 10; t++)
         {
-            printf(" %d", tabuleiro[t][i]);
+            if (tabuleiro[t][i] == 3)
+                printf(" #");
+            else
+                printf(" ~");
         }
+
         printf("\n");
     }
 
