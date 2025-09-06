@@ -12,22 +12,22 @@ int main()
     int tabuleiro[10][10] = {0};
 
     // IMAGEM DA CRUZ
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++) // percorrendo todas as linhas da matriz
     {
 
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 10; j++) // percorrendo todas as colunas da matriz
         {
-            if (i == 3 && j == 2)
+            if (i == 3 && j == 2) // printando umas vez o # na linha 3 e coluna 2
+            {
+
+                tabuleiro[i][j] = 3; 
+            }
+            else if (i == 4 && (j >= 0 && j <= 4)) // printando 5 vezes o (#) na linha 4 da coluna 0 ate a coluna 4
             {
 
                 tabuleiro[i][j] = 3;
             }
-            else if (i == 4 && (j >= 0 && j <= 4))
-            {
-
-                tabuleiro[i][j] = 3;
-            }
-            else if (i == 5 && j == 2)
+            else if (i == 5 && j == 2) // printando uma vez o (#) na linha 5 e na coluna 2 
             {
 
                 tabuleiro[i][j] = 3;
@@ -75,31 +75,24 @@ int main()
             {
 
                 tabuleiro[i][j] = 3;
+            } else if ( i == 7 && j == 5 ){
+                
+                 tabuleiro[i][j] = 3;
+
             }
         }
     }
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-
-            if (i == 7 && j == 5)
-            {
-
-                tabuleiro[i][j] = 3;
-            }
-        }
-    }
+  
 
     printf("  "); // espaço para alnhar as letras com os numeros
-    for (int l = 0; l < 10; l++)
+    for (int l = 0; l < 10; l++) // percorrendo o vetor 
     {
 
-        printf(" %c", linha[l]);
+        printf(" %c", linha[l]); // printando o vetor com as  letras 
     }
     printf("\n");
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++) // laço para imprimir os numeros de 1 a 10
     {
 
         // imprimindo e ajustando o numero 10 que tem dois digitos
@@ -108,7 +101,7 @@ int main()
         else
             printf(" %d", i + 1);
 
-        // laco para imprimir os simbolos na matriz
+        // laco para imprimir os simbolos na matriz por linhae colunas
         for (int j = 0; j < 10; j++)
         {
             if (tabuleiro[i][j] == 3)
